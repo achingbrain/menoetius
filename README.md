@@ -155,6 +155,8 @@ You can then view the prometheus server on [http://127.0.0.1:9090](http://127.0.
 
 ![Menoetius](https://www.greekmythology.com/images/mythology/menoetius_152.jpg)
 
-Menoetius was a Titan god, son of Titans Iapetus and Clymene, and brother of Atlas, Prometheus and Epimetheus. His name derives from the Ancient Greek words "menos" (might) and "oitos" (doom), meaning "doomed might".
+> Menoetius was a Titan god, son of Titans Iapetus and Clymene, and brother of Atlas, Prometheus and Epimetheus. His name derives from the Ancient Greek words "menos" (might) and "oitos" (doom), meaning "doomed might".
+>
+> [https://www.greekmythology.com/Titans/Menoetius/menoetius.html](https://www.greekmythology.com/Titans/Menoetius/menoetius.html)
 
 Doom also stalks this module as hopefully one day [https://github.com/roylines/node-epimetheus/pull/63](https://github.com/roylines/node-epimetheus/pull/63) will be merged, obviating the need for this module to exist.
