@@ -4,8 +4,8 @@
   "description": "node middleware to automatically instrument node applications for consumption by prometheus",
   "main": "index.js",
   "scripts": {
-    "test": "istanbul cover _mocha -dir $CIRCLE_ARTIFACTS",
-    "coveralls": "cat $CIRCLE_ARTIFACTS/lcov.info | coveralls"
+    "test": "istanbul cover _mocha -dir ./coverage",
+    "coveralls": "cat ./coverage/lcov.info | coveralls"
   },
   "git-pre-hooks": {
     "pre-push": "npm test"

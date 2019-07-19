@@ -34,21 +34,10 @@ jobs:
           command: npm install
       - run:
           name: npm test
-          command: npm test 
-  deploy:
-    <<: *nodejs
-    steps:
-      - attach_workspace:
-          at: /tmp/workspace
+          command: npm test
       - run:
-          name: setup auth
-          command: echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" > ~/.npmrc
-      - run:
-          name: set npm version to build
-          command: npm version "1.0.$CIRCLE_BUILD_NUM" --no-git-tag-version
-      - run:
-          name: npm publish
-          command: npm publish
+          name: npm coveralls
+          command: npm run coveralls
 
 workflows:
   version: 2
@@ -56,12 +45,5 @@ workflows:
     jobs:
       - build
       - test:
-          requires: 
+          requires:
             - build
-      - deploy:
-          context: org-global
-          requires: 
-            - test
-          filters: 
-            branches: 
-              only: master

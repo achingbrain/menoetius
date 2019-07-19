@@ -1,7 +1,7 @@
 # Menoetius
-[![CircleCI](https://img.shields.io/circleci/project/roylines/menoetius.svg)]()
-[![Coveralls](https://img.shields.io/coveralls/achingbrain/menoetius.svg)]()
-[![David](https://img.shields.io/david/achingbrain/menoetius.svg)]()
+[![CircleCI](https://circleci.com/gh/achingbrain/menoetius/tree/master.svg?style=svg)](https://circleci.com/gh/achingbrain/menoetius/tree/master)
+[![Coverage Status](https://coveralls.io/repos/github/achingbrain/menoetius/badge.svg)](https://coveralls.io/github/achingbrain/menoetius)
+[![Dependencies Status](https://david-dm.org/achingbrain/menoetius/status.svg)](https://david-dm.org/achingbrain/menoetius)
 
 [![NPM](https://nodei.co/npm/menoetius.png)](https://nodei.co/npm/menoetius/)
 
@@ -153,7 +153,7 @@ You can then view the prometheus server on [http://127.0.0.1:9090](http://127.0.
 
 # Etymology
 
-![Menoetius](https://www.greekmythology.com/Titans/Menoetius/menoetius.html)
+![Menoetius](https://www.greekmythology.com/images/mythology/menoetius_152.jpg)
 
 Menoetius was a Titan god, son of Titans Iapetus and Clymene, and brother of Atlas, Prometheus and Epimetheus. His name derives from the Ancient Greek words "menos" (might) and "oitos" (doom), meaning "doomed might".
 
