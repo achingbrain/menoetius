@@ -1,20 +1,20 @@
-# Epimetheus
-[![CircleCI](https://img.shields.io/circleci/project/roylines/node-epimetheus.svg)]()
-[![Coveralls](https://img.shields.io/coveralls/roylines/node-epimetheus.svg)]()
-[![David](https://img.shields.io/david/roylines/node-epimetheus.svg)]()
+# Menoetius
+[![CircleCI](https://img.shields.io/circleci/project/roylines/menoetius.svg)]()
+[![Coveralls](https://img.shields.io/coveralls/achingbrain/menoetius.svg)]()
+[![David](https://img.shields.io/david/achingbrain/menoetius.svg)]()
 
-[![NPM](https://nodei.co/npm/epimetheus.png)](https://nodei.co/npm/epimetheus/)
+[![NPM](https://nodei.co/npm/menoetius.png)](https://nodei.co/npm/menoetius/)
 
 Middleware to automatically instrument node applications for consumption by a [Prometheus](https://prometheus.io/) server.
 
 Prometheus is an open source monitoring solution that obtains metrics from servers by querying against the /metrics endpoint upon them.
 
-Once instrumented, Epimetheus automatically serves [response duration](#duration) metrics, plus nodejs [system metrics](#system) on the /metrics endpoint ready to be consumed by Prometheus.
+Once instrumented, Menoetius automatically serves [response duration](#duration) metrics, plus nodejs [system metrics](#system) on the /metrics endpoint ready to be consumed by Prometheus.
 
-Epimetheus will instrument websites and webservices that use [http](#http), [express](#express), [hapi](#hapi) and [restify](#restify).
+Menoetius will instrument websites and webservices that use [http](#http), [express](#express), [hapi](#hapi) and [restify](#restify).
 
 # Instrumentation
-Epimetheus automatically measures a number of metrics once instrumented.
+Menoetius automatically measures a number of metrics once instrumented.
 The following metrics are instrumented via the /metrics endpoint:
 
 ## <a name="duration"></a> Duration Metrics
@@ -35,15 +35,15 @@ These are metrics provided by [prom-client](https://github.com/siimon/prom-clien
 
 # Installation
 ```
-> npm install --save epimetheus
+> npm install --save menoetius
 ```
 
-Epimetheus has only one method, instrument, and it has the following signature:
+Menoetius has only one method, instrument, and it has the following signature:
 ## instrument(server, options)
 
 The first argument represents the server of the middleware.
 
-The second argument is optional, and allows some configuration of epimetheus
+The second argument is optional, and allows some configuration of menoetius
 
 - `url` - the url on which to serve metrics. Defaults to `/metrics`.
 
@@ -52,7 +52,7 @@ See the following examples of use with [http](#http), [express](#express), [hapi
 # <a name="http"></a> http
 ```
 const http = require('http');
-const epimetheus = require('../../index');
+const menoetius = require('../../index');
 
 const server = http.createServer((req, res) => {
   if(req.url !== '/metrics') {
@@ -61,7 +61,7 @@ const server = http.createServer((req, res) => {
   }
 });
 
-epimetheus.instrument(server);
+menoetius.instrument(server);
 
 server.listen(8003, '127.0.0.1', () => {
   console.log('http listening on 8003');
@@ -71,10 +71,10 @@ server.listen(8003, '127.0.0.1', () => {
 # <a name="express"></a> Express
 ```
 const express = require('express');
-const epimetheus = require('epimetheus');
+const menoetius = require('menoetius');
 
 const app = express();
-epimetheus.instrument(app);
+menoetius.instrument(app);
 
 app.get('/', (req, res) => {
   res.send();
@@ -88,7 +88,7 @@ app.listen(3000, () => {
 # <a name="hapi"></a> Hapi
 ```
 const Hapi = require('hapi');
-const epimetheus = require('epimetheus');
+const menoetius = require('menoetius');
 
 const server = Hapi.Server({
     port: 8002
@@ -122,11 +122,11 @@ init();
 # <a name="restify"></a> Restify
 ```
 const restify = require('restify');
-const epimetheus = require('epimetheus');
+const menoetius = require('menoetius');
 
 const server = restify.createServer();
 
-epimetheus.instrument(this.server);
+menoetius.instrument(this.server);
 
 server.get('/', (req, res, done) => {
   res.send();
@@ -153,8 +153,8 @@ You can then view the prometheus server on [http://127.0.0.1:9090](http://127.0.
 
 # Etymology
 
-![Epimetheus](http://www.greekmythology.com/images/mythology/epimetheus_28.jpg)
+![Menoetius](https://www.greekmythology.com/Titans/Menoetius/menoetius.html)
 
-Epimetheus was one of the Titans and the brother of Prometheus
-His name is derived from the Greek word meaning 'afterthought',
-which is the antonym of his brother's name, Prometheus, meaning 'forethought'.
+Menoetius was a Titan god, son of Titans Iapetus and Clymene, and brother of Atlas, Prometheus and Epimetheus. His name derives from the Ancient Greek words "menos" (might) and "oitos" (doom), meaning "doomed might".
+
+Doom also stalks this module as hopefully one day [https://github.com/roylines/node-epimetheus/pull/63](https://github.com/roylines/node-epimetheus/pull/63) will be merged, obviating the need for this module to exist.

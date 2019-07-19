@@ -1,5 +1,5 @@
 const http = require('http')
-const epithemeus = require('epimetheus')
+const menoetius = require('menoetius')
 
 const server = http.createServer((req, res) => {
   if (req.url !== '/metrics') {
@@ -8,7 +8,7 @@ const server = http.createServer((req, res) => {
   }
 })
 
-epithemeus.instrument(server)
+menoetius.instrument(server)
 
 server.listen(8003, () => {
   console.log('http listening on 8003')

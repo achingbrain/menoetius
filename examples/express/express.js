@@ -1,8 +1,8 @@
 const express = require('express')
-const epithemeus = require('epimetheus')
+const menoetius = require('menoetius')
 
 const app = express()
-epithemeus.instrument(app)
+menoetius.instrument(app)
 
 app.get('/', function (req, res) {
   var high = 500, low = 150

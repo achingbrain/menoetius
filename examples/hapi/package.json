@@ -9,7 +9,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "epimetheus": "*",
-    "hapi": "^17.x.x"
+    "menoetius": "*",
+    "hapi": "^1.x.x"
   }
 }

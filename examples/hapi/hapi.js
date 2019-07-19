@@ -1,5 +1,5 @@
 const Hapi = require('hapi')
-const epithemeus = require('epimetheus')
+const menoetius = require('menoetius')
 
 const server = Hapi.Server({
     port: 8002
@@ -7,7 +7,7 @@ const server = Hapi.Server({
 
 async function init() {
   try {
-    await epithemeus.instrument(server);
+    await menoetius.instrument(server);
 
     server.route({
       method: 'GET',

@@ -1,8 +1,8 @@
 const restify = require('restify')
-const epithemeus = require('epimetheus')
+const menoetius = require('menoetius')
 
 const server = restify.createServer()
-epithemeus.instrument(server)
+menoetius.instrument(server)
 
 server.get('/', function (req, res, done) {
   var high = 500, low = 150
